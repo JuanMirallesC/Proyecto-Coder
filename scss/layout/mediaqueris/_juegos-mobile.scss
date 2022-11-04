@@ -1,0 +1,10 @@
+@media (max-width: 576px) {
+	.box-noticias {
+		display: grid;
+		width: 100%;
+		height: 100%;
+		grid-template-columns: repeat(1, 1fr);
+		grid-template-rows: repeat(6, 1fr);
+		grid-template-areas: "box-league" "box-league" "box-css" "box-css" "box-valo" "box-valo";
+	}
+}

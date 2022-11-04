@@ -1,0 +1,48 @@
+@media (max-width: 576px) {
+	.nav-bar {
+		display: grid;
+		height: auto;
+		width: 100%;
+		grid-template-columns: repeat(1, 1fr);
+		grid-template-rows: repeat(1, 1fr);
+		grid-template-areas: "tittle-1 tittle-1 tittle-1";
+	}
+	nav {
+		display: grid;
+	}
+	.box-2 {
+		display: none;
+	}
+	.navbar-expand-lg {
+		background-color: #2b2a29;
+		color: white;
+	}
+	.navbar-brand {
+		color: white;
+	}
+	.navbar-toggler {
+		background-color: white;
+		border: solid rgb(209, 54, 57);
+	}
+	.nav-link {
+		color: white;
+	}
+	.noticias-index {
+		display: grid;
+		grid-template-columns: repeat(1, 1fr);
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		height: 1300px;
+	}
+	.box-4 {
+		grid-column: span 1;
+	}
+	.box-3 {
+		grid-column: span 1;
+	}
+	.box-5 {
+		grid-column: span 1;
+		margin-top: auto;
+	}
+}

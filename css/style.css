@@ -1,665 +1,497 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Mark Pro', Arial, sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
 
-}
+* {
+  font-family: "Mark Pro", Arial, sans-serif; }
 
 /*aca comence a utilizar grids*/
-.general {
-    display: grid;
-    height: 100vh;
-    width: auto;
-    grid-template-columns: 50px 50px 900px;
-    grid-template-rows: 50px 50px 600px 50px;
-
-    grid-template-areas:
-        "box-1 box-1 box-1 box-1"
-        "box-2 box-2 box-2 box-2"
-        "box-4 box-4 box-4 box-3"
-        "box-4 box-4 box-4 box-3"
-        "box-5 box-5 box-5 box-5"
-    ;
-}
-
-.box-1 {
-    background-color: #2b2a29;
-    grid-area: box-1;
-    color: aliceblue;
-
-}
-
-.box-1 h1 {
-    color: rgb(209, 54, 57);
-}
-
 /*aca comence a trabajar el navbar*/
+/*menu hamburguesa*/
+/*aca trabaje animaciones*/
+.nav-bar {
+  display: grid;
+  height: auto;
+  width: 100%;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas: "tittle-1 tittle-1 tittle-1" "box-2 box-2 box-2"; }
+
+.tittle-1 {
+  background-color: #2b2a29;
+  grid-area: tittle-1; }
+  .tittle-1 h1 {
+    color: #d13639; }
+
 .box-2 {
-    background-color: #2b2a29;
-    grid-area: box-2;
-    color: aliceblue;
-
-}
-
-.box-2 ul {
+  background-color: #2b2a29;
+  grid-area: box-2;
+  color: aliceblue;
+  padding-bottom: 20px; }
+  .box-2 ul {
     display: flex;
     width: 100%;
     justify-content: space-around;
-    list-style: none;
-}
-
-.box-2 a {
+    list-style: none; }
+  .box-2 a {
     text-decoration: none;
     color: white;
     font-size: 20px;
     margin-right: 15px;
     position: relative;
-    padding: 0 10px;
-}
+    padding: 0 10px; }
+    .box-2 a:after {
+      content: "";
+      position: absolute;
+      background-color: #d13639;
+      height: 3px;
+      width: 0;
+      left: 0;
+      bottom: -10px;
+      transition: 0.3s; }
+    .box-2 a:hover::after {
+      width: 100%; }
 
-/*aca trabaje animaciones*/
-.box-2 a:after {
-    content: "";
-    position: absolute;
-    background-color: rgb(209, 54, 57);
-    height: 3px;
-    width: 0;
-    left: 0;
-    bottom: -10px;
-    transition: 0.3s;
-}
+.navbar {
+  display: none; }
 
-.box-2 a:hover::after {
-    width: 100%;
-}
+.noticias-index {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  width: 100%;
+  height: 800px; }
 
-/*aca trabajo el aside y el contenido principal*/
-.box-3 {
-    background-color: white;
-    grid-area: box-3;
-    display: flex;
-    text-align: start;
-    padding-top: 50px;
-    background-color: blanchedalmond;
-
-}
-
-.box-4 {
-    background-color: white;
-    grid-area: box-4;
-    text-align: start;
-    padding-top: 50px;
-    padding-left: 30px;
-    padding-right: 30px;
-}
+.noticias-index .box-4 {
+  grid-column: span 3;
+  background-color: white;
+  text-align: start;
+  padding-top: 50px;
+  padding-left: 30px; }
 
 .box-4 h2 {
-    padding-top: 30px;
-    padding-bottom: 30px;
-}
+  padding-top: 30px;
+  padding-bottom: 30px; }
 
 .box-4 h3 {
-    padding-top: 20px;
-    padding-bottom: 30px;
-}
+  padding-top: 20px;
+  padding-bottom: 30px;
+  margin-right: 20px; }
 
-/*aca comence a trabajar el footer*/
-.box-5 {
-    background-color: #2b2a29;
-    grid-area: box-5;
-    display: flex;
-    align-items: center;
-}
+.noticias-index .box-3 {
+  grid-column: span 2;
+  background-color: white;
+  display: flex;
+  text-align: center;
+  padding-top: 50px;
+  background-color: blanchedalmond;
+  margin-top: 100px;
+  height: 400px;
+  margin-right: 20px; }
 
-.box-5 ul {
-    display: flex;
-    width: 100%;
-    justify-content: space-around;
-    list-style: none;
-}
-
-.box-5 a {
-    text-decoration: none;
-    color: aliceblue;
-}
-/*media*/
-@media (max-width:768px) {
-    .general{
-        height: 100vh;
-        width: 100vw;
-        grid-template-columns: repeat(2,1fr);
-        grid-template-rows: repeat(6,1fr);
-        grid-template-areas: 
-        "box-1 box-1"
-        "box-2 box-2"
-        "box-3 box-3" 
-        "box-4 box-4"
-        "box-4 box-4"
-        "box-5 box-5"    
-        ;
-    }
-    
-    .box-1 {
-        background-color: #2b2a29;
-        grid-area: box-1;
-        color: aliceblue;
-        padding-bottom: 10px;
-    
-    }
-    
-    .box-1 h1 {
-        color: rgb(209, 54, 57);
-    }
-    
-    /*aca comence a trabajar el navbar*/
-    .box-2 {
-        background-color: #2b2a29;
-        grid-area: box-2;
-        color: aliceblue;
-        padding-bottom: 20px;
-    
-    }
-    
-    .box-2 ul {
-        display: flex;
-        width: 100%;
-        justify-content: space-around;
-        list-style: none;
-    }
-    
-    .box-2 a {
-        text-decoration: none;
-        color: white;
-        font-size: 20px;
-        margin-right: 15px;
-        position: relative;
-        padding: 0 10px;
-    }
-    
-    /*aca trabaje animaciones*/
-    .box-2 a:after {
-        content: "";
-        position: absolute;
-        background-color: rgb(209, 54, 57);
-        height: 3px;
-        width: 0;
-        left: 0;
-        bottom: -10px;
-        transition: 0.3s;
-    }
-    
-    .box-2 a:hover::after {
-        width: 100%;
-    }
-    
-    .box-4 {
-        background-color: white;
-        grid-area: box-4;
-        text-align: start;
-        padding-top: 50px;
-        padding-left: 30px;
-        padding-right: 30px;
-        width: 100vh;
-        min-height: 100vh;
-        display: grid;
-        grid-template-rows: auto 1fr auto;
-        padding-bottom: 90px;
-    }
-    
-    .box-4 h2 {
-        padding-top: 30px;
-        padding-bottom: 30px;
-    }
-    
-    .box-4 h3 {
-        padding-top: 20px;
-        padding-bottom: 30px;
-    }
-    .box-3{
-        grid-area: box-3;
-        margin-top: 50px;
-        padding-top: 20px;
-        padding-bottom: 20px;
-    }
-    
-    /*aca comence a trabajar el footer*/
-    .box-5 {
-        background-color: #2b2a29;
-        grid-area: box-5;
-        display: flex;
-        align-items: center;
-        align-content: end;
-        padding: 1em 0;
-        
-    }
-    
-    .box-5 ul {
-        display: flex;
-        width: 100%;
-        justify-content: space-around;
-        list-style: none;
-    }
-    
-    .box-5 a {
-        text-decoration: none;
-        color: aliceblue;
-    }
-}
-/*mobile*/
-@media (max-width:576px) {
-    .general {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(5, 1fr);
-        grid-template-areas:
-            "box-1"
-            "box-2"
-            "box-4"
-            "box-3"
-            "box-5"
-        ;
-    }
-
-    .box-1 {
-        background-color: #2b2a29;
-        color: aliceblue;
-        grid-area: box-1;
-        text-align: center;
-    }
-
-    .box-1 h1 {
-        color: rgb(209, 54, 57);
-    }
-
-
-    .box-2 {
-        background-color: #2b2a29;
-        grid-area: box-2;
-    }
-
-    .box-2 ul {
-        width: 100%;
-        display: inline-table;
-        list-style: none;
-    }
-
-    .box-2 a {
-        text-decoration: none;
-        color: white;
-        font-size: 20px;
-        margin-right: 15px;
-        position: relative;
-        padding: 0 10px;
-    }
-
-    /*aca trabaje animaciones*/
-    .box-2 a:after {
-        content: "";
-        position: absolute;
-        background-color: rgb(209, 54, 57);
-        height: 3px;
-        width: 0;
-        left: 0;
-        bottom: -10px;
-        transition: 0.3s;
-    }
-
-    .box-2 a:hover::after {
-        width: 100%;
-    }
-
-    .box-3 {
-        grid-area: box-3;
-        text-align: center;
-        padding-top: 20px;
-        background-color: blanchedalmond;
-        margin-bottom: 20px;
-        margin-top: 20px;
-        padding-bottom: 20px;
-    }
-
-    .box-4 {
-        grid-area: box-4;
-        text-align: start;
-        padding-top: 50px;
-        padding-left: 30px;
-        padding-right: 30px;
-    }
-
-    .box-4 h2 {
-        padding-top: 30px;
-        padding-bottom: 30px;
-    }
-
-    .box-4 h3 {
-        padding-top: 20px;
-        padding-bottom: 30px;
-    }
-
-    .box-5 {
-        background-color: #2b2a29;
-        grid-area: box-5;
-        display: flex;
-        align-items: center;
-    }
-
-    .box-5 ul {
-        display: flex;
-        width: 100%;
-        justify-content: space-around;
-        list-style: none;
-    }
-
-    .box-5 a {
-        text-decoration: none;
-        color: aliceblue;
-    }
-
-}
-
-/*ahora empiezo a trabajar con Esports*/
-
-.clase-imagenes {
+/*aca trabaje animaciones*/
+@media (max-width: 768px) {
+  .nav-bar {
     display: grid;
-    width: 100vw;
-    height: auto;
-    display: flex;
-    justify-content: space-around;
-    padding-top: 50px;
-    column-gap: 5px;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(1, 1fr);
-    grid-template-areas:
-        "img-lol img-cs img-val"
-    ;
-
-}
-
-@-webkit-keyframes pulse {
-    from {
-        -webkit-transform: scale3d(1, 1, 1);
-        transform: scale3d(1, 1, 1);
-    }
-
-    50% {
-        -webkit-transform: scale3d(1.05, 1.05, 1.05);
-        transform: scale3d(1.05, 1.05, 1.05);
-    }
-
-    to {
-        -webkit-transform: scale3d(1, 1, 1);
-        transform: scale3d(1, 1, 1);
-    }
-}
-
-@keyframes pulse {
-    from {
-        -webkit-transform: scale3d(1, 1, 1);
-        transform: scale3d(1, 1, 1);
-    }
-
-    50% {
-        -webkit-transform: scale3d(1.05, 1.05, 1.05);
-        transform: scale3d(1.05, 1.05, 1.05);
-    }
-
-    to {
-        -webkit-transform: scale3d(1, 1, 1);
-        transform: scale3d(1, 1, 1);
-    }
-}
-
-
-img:hover {
-    -webkit-animation-name: pulse;
-    animation-name: pulse;
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-}
-
-.img-lol {
-    grid-area: img-lol;
-    align-self: center;
-
-
-}
-
-.img-cs {
-    grid-area: img-cs;
-    align-self: center;
-
-}
-
-.img-cs img {
-    width: 338px;
-}
-
-.img-val {
-    grid-area: img-val;
-
-    align-self: center;
-
-}
-
-@media (max-width:768px){
-    .clase-imagenes{
-        display: grid;
-        height: 100vh;
-        width: 100vw;
-        margin-top: -25px;
-        grid-template-columns: repeat(2,1fr);
-        grid-template-rows: repeat(6,1fr);
-        grid-template-areas: 
-        "box-1 box-1  "
-        "box-2  box-2"
-        "img-lol img-lol"
-        "img-cs img-cs "
-        "img-val img-val"
-        "box-5 box-5"
-        ;
-}
-.box-1 {
-    background-color: #2b2a29;
-    color: aliceblue;
-    grid-area: box-1;
-   
-}
-
-.box-1 h1 {
-    color: rgb(209, 54, 57); 
-    
-}
-
-.box-2 {
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%; }
+    .nav-bar .tittle-1 {
+      background-color: #2b2a29;
+      grid-column: 1/3;
+      text-align: center; }
+  .box-2 {
     background-color: #2b2a29;
     grid-area: box-2;
     color: aliceblue;
-
-}
-
-.box-2 ul {
-    display: flex;
-    width: 100%;
-    justify-content: space-around;
-    list-style: none;
-}
-
-.box-2 a {
-    text-decoration: none;
-    color: white;
-    font-size: 20px;
-    margin-right: 15px;
-    position: relative;
-    padding: 0 10px;
-}
-
-/*aca trabaje animaciones*/
-.box-2 a:after {
-    content: "";
-    position: absolute;
-    background-color: rgb(209, 54, 57);
-    height: 3px;
-    width: 0;
-    left: 0;
-    bottom: -10px;
-    transition: 0.3s;
-}
-
-.box-2 a:hover::after {
-    width: 100%;
-}
-
-.img-lol {
-    grid-area: img-lol;
-    justify-self: center;
-    padding-bottom: 25px;
-    
-}
-
-.img-cs {
-    grid-area: img-cs;
-    padding-bottom: 25px;
-    justify-self: center;
-    align-self: center;
-    
-}
-.img-cs img{
-width: 300px;
-}
-.img-val {
-    grid-area: img-val;
-    justify-self: center;
-    padding-bottom: 80px;
-}
-
-.box-5 {
-    background-color: #2b2a29;
-    grid-area: box-5;
-    display: flex;
-    align-items: center;
-}
-
-.box-5 ul {
-    display: flex;
-    width: 100%;
-    justify-content: space-around;
-    list-style: none;
-}
-
-.box-5 a {
-    text-decoration: none;
-    color: aliceblue;
-}
-
-}
-
-/*aca trabajo mobile en Esports*/
-@media (max-width:576px) {
-    .clase-imagenes {
-        display: grid;
-        height: 700px;
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(6, 1fr);
-        grid-template-areas:
-            "box-1"
-            "box-2"
-            "img-lol"
-            "img-cs"
-            "img-val"
-            "box-5"
-        ;
-    }
-
-    .box-1 {
-        background-color: #2b2a29;
-        color: aliceblue;
-        grid-area: box-1;
-        
-    }
-
-    .box-1 h1 {
-        color: rgb(209, 54, 57);
-        text-align: center;
-    }
-
-    .box-2 {
-        background-color: #2b2a29;
-        grid-area: box-2;
-    }
-
+    padding-bottom: 20px; }
     .box-2 ul {
-        width: 100%;
-        display: inline-table;
-        list-style: none;
-    }
-
+      display: flex;
+      width: 100%;
+      justify-content: space-around;
+      list-style: none; }
     .box-2 a {
-        text-decoration: none;
-        color: white;
-        font-size: 20px;
-        margin-right: 15px;
-        position: relative;
-        padding: 0 10px;
-    }
-
-    /*aca trabaje animaciones*/
-    .box-2 a:after {
+      text-decoration: none;
+      color: white;
+      font-size: 20px;
+      margin-right: 15px;
+      position: relative;
+      padding: 0 10px; }
+      .box-2 a:after {
         content: "";
         position: absolute;
-        background-color: rgb(209, 54, 57);
+        background-color: #d13639;
         height: 3px;
         width: 0;
         left: 0;
         bottom: -10px;
-        transition: 0.3s;
-    }
+        transition: 0.3s; }
+      .box-2 a:hover::after {
+        width: 100%; } }
 
-    .box-2 a:hover::after {
-        width: 100%;
-    }
+@media (max-width: 576px) {
+  .nav-bar {
+    display: grid;
+    height: auto;
+    width: 100%;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-template-areas: "tittle-1 tittle-1 tittle-1"; }
+  nav {
+    display: grid; }
+  .box-2 {
+    display: none; }
+  .navbar-expand-lg {
+    background-color: #2b2a29;
+    color: white; }
+  .navbar-brand {
+    color: white; }
+  .navbar-toggler {
+    background-color: white;
+    border: solid #d13639; }
+  .nav-link {
+    color: white; }
+  .noticias-index {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 1300px; }
+  .box-4 {
+    grid-column: span 1; }
+  .box-3 {
+    grid-column: span 1; }
+  .box-5 {
+    grid-column: span 1;
+    margin-top: auto; } }
 
-    .img-lol {
-        grid-area: img-lol;
-        justify-self: center;
-        padding-bottom: 25px;
-        ;
-    }
+@-webkit-keyframes "pulse" {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); }
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05); }
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); } }
 
-    .img-cs {
-        grid-area: img-cs;
-        padding-bottom: 25px;
-        justify-self: center;
-        align-self: center;
-        
-    }
-.img-cs img{
+@keyframes "pulse" {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); }
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05); }
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); } }
+
+@-webkit-keyframes "pulse" {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); }
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05); }
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); } }
+
+@keyframes "pulse" {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); }
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05); }
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); } }
+
+.animated {
+  display: grid;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  column-gap: 5px;
+  min-height: 100vh;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  grid-template-areas: "img-lol img-cs img-val"; }
+
+img:hover {
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+.img-lol {
+  grid-area: img-lol;
+  align-self: center; }
+
+.img-cs {
+  grid-area: img-cs;
+  align-self: center; }
+  .img-cs img {
+    width: 338px; }
+
+.img-val {
+  grid-area: img-val;
+  align-self: center; }
+
+@media (max-width: 768px) {
+  .animated {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas: "img-lol img-lol img-lol img-lol" "img-lol img-lol img-lol img-lol" "img-cs img-cs img-cs img-cs" "img-cs img-cs img-cs img-cs" "img-val img-val img-val img-val" "img-val img-val img-val img-val"; }
+  .img-lol {
+    grid-area: img-lol;
+    padding-bottom: 100px;
+    justify-self: center; }
+  .img-cs {
+    grid-area: img-cs;
+    padding-bottom: 25px;
+    justify-self: center; }
+    .img-cs img {
+      width: 300px; }
+  .img-val {
+    grid-area: img-val;
+    padding-bottom: 1px;
+    justify-self: center; } }
+
+@media (max-width: 576px) {
+  .animated {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas: "img-lol img-lol img-lol img-lol" "img-lol img-lol img-lol img-lol" "img-cs img-cs img-cs img-cs" "img-cs img-cs img-cs img-cs" "img-val img-val img-val img-val" "img-val img-val img-val img-val"; }
+  .img-lol {
+    grid-area: img-lol;
+    justify-self: center;
+    padding-bottom: 25px; }
+  .img-cs {
+    grid-area: img-cs;
+    padding-bottom: 25px;
+    justify-self: center;
+    align-self: center; }
+    .img-cs img {
+      width: 300px; }
+  .img-val {
+    grid-area: img-val;
+    justify-self: center;
+    padding-bottom: 25px; } }
+
+.box-noticias {
+  display: grid;
+  height: 950px;
+  background-color: blanchedalmond;
+  width: 100%;
+  margin-left: 60px;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 30px;
+  margin-bottom: 50px;
+  justify-content: center;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas: "box-league box-league" "box-css box-css" "box-valo box-valo"; }
+
+.box-league {
+  grid-area: box-league; }
+
+.box-css {
+  grid-area: box-css; }
+
+@media (max-width: 576px) {
+  .box-noticias {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas: "box-league" "box-league" "box-css" "box-css" "box-valo" "box-valo"; } }
+
+.container {
+  width: 200%;
+  height: 100vh;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  border: solid black;
+  align-self: center; }
+
+.loginContainer {
+  display: flex;
+  width: 600px;
+  height: 650px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+  background: #fff; }
+
+.register {
+  flex: 1;
+  padding: 40px;
+  position: relative; }
+  .register h2 {
+    margin-bottom: 30px;
+    color: #d13639; }
+  .register input {
+    width: 100%;
+    padding: 5px;
+    font-size: 16px;
+    margin-bottom: 25px;
+    border-top-style: none;
+    border-left-style: none;
+    border-right-style: none;
+    border: 1px solid #a8a8a8;
+    color: #333; }
+    .register input:active {
+      outline: none; }
+    .register input:focus {
+      outline: none; }
+  .register .submit {
+    width: auto;
+    padding: 10px;
+    background: #d13639;
+    color: #fff;
+    font-size: 12px;
+    cursor: pointer; }
+  .register::after {
+    content: ">";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 50%;
+    right: -23px;
+    padding: 10px;
+    text-align: center;
+    font-size: 19px;
+    background: #f1f1f1;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    box-shadow: -1px 1px 3px 1px rgba(0, 0, 0, 0.2); }
+
+.logIn {
+  flex: 1;
+  padding: 40px; }
+  .logIn h2 {
+    color: #d13639;
+    margin-bottom: 30px; }
+  .logIn button {
+    width: 100%;
+    margin: 15px 0px;
+    padding: 10px;
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    position: relative; }
+    .logIn button i {
+      position: absolute;
+      top: 12px;
+      left: 12px; }
+  .logIn .facebook {
+    background: #3b5999;
+    border-style: none;
+    color: #fff; }
+  .logIn .twitter {
+    background: #55acef;
+    border-style: none;
+    color: #fff; }
+  .logIn .correo {
+    background: #33d4ce;
+    border-style: none;
+    color: #fff; }
+
+@media (max-width: 576px) {
+  .navbar {
+    display: block;
+    width: 100%; }
+  nav {
+    width: 100%; }
+  .loginContainer {
+    width: 100%; } }
+
+.nosotros {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-areas: "imagen-esports " "parrafo-1 " "parrafo-1 " "parrafo-1"; }
+
+.imagen-esports {
+  grid-area: imagen-esports;
+  margin-top: 30px;
+  padding-left: 220px;
+  padding-bottom: 60px; }
+
+.titulo-somos {
+  display: flex;
+  margin: 0 auto; }
+
+.parrafo-1 {
+  width: 900px;
+  grid-area: parrafo-1;
+  display: flex;
+  text-align: center;
+  margin: 0 auto; }
+
+@media (max-width: 768px) {
+  .imagen-esports {
+    grid-area: imagen-esports;
+    width: 250px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-self: center; }
+  .nosotros {
+    display: grid;
+    height: 250px;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: "titulo-somos" "parrafo-1"; }
+  .titulo-somos {
+    grid-area: titulo-somos;
     width: 300px;
-}
-    .img-val {
-        grid-area: img-val;
-        justify-self: center;
-        padding-bottom: 25px;
-    }
-    
-    .box-5 {
-        background-color: #2b2a29;
-        grid-area: box-5;
-        display: flex;
-        align-items: center;
-    }
+    display: flex;
+    justify-content: center; }
+  .parrafo-1 {
+    grid-area: parrafo-1;
+    display: flex;
+    width: 300px;
+    padding-bottom: 20px; } }
 
-    .box-5 ul {
-        display: flex;
-        width: 100%;
-        justify-content: space-around;
-        list-style: none;
-    }
+@media (max-width: 576px) {
+  .contenedor-nosotros {
+    height: 700px; }
+  .imagen-esports {
+    display: none; }
+  .titulo-somos {
+    display: flex;
+    justify-content: center;
+    padding-top: 200px; } }
 
-    .box-5 a {
-        text-decoration: none;
-        color: aliceblue;
-    }
-}
+.footer-general {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 50px;
+  max-width: 100%; }
+  .footer-general .box-5 {
+    grid-column: 1/4;
+    background-color: #2b2a29;
+    width: 100%; }
+
+.box-5 ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  text-align: center;
+  margin-top: 23px; }
+
+.box-5 a {
+  text-decoration: none;
+  color: aliceblue; }

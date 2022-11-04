@@ -1,0 +1,27 @@
+@media (max-width: 768px) {
+	.animated {
+		display: grid;
+		width: 100%;
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-rows: repeat(6, 1fr);
+		grid-template-areas: "img-lol img-lol img-lol img-lol" "img-lol img-lol img-lol img-lol" "img-cs img-cs img-cs img-cs" "img-cs img-cs img-cs img-cs" "img-val img-val img-val img-val" "img-val img-val img-val img-val";
+	}
+	.img-lol {
+		grid-area: img-lol;
+		padding-bottom: 100px;
+		justify-self: center;
+	}
+	.img-cs {
+		grid-area: img-cs;
+		padding-bottom: 25px;
+		justify-self: center;
+		img {
+			width: 300px;
+		}
+	}
+	.img-val {
+		grid-area: img-val;
+		padding-bottom: 1px;
+		justify-self: center;
+	}
+}

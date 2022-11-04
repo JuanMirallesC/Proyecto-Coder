@@ -1,0 +1,21 @@
+.box-noticias {
+	display: grid;
+	height: 950px;
+	background-color: blanchedalmond;
+	width: 100%;
+	margin-left: 60px;
+	margin: 0 auto;
+	margin-top: 20px;
+	padding: 30px;
+	margin-bottom: 50px;
+	justify-content: center;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	grid-template-areas: "box-league box-league" "box-css box-css" "box-valo box-valo";
+}
+.box-league {
+	grid-area: box-league;
+}
+.box-css {
+	grid-area: box-css;
+}

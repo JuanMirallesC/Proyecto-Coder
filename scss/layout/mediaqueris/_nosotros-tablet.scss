@@ -1,0 +1,29 @@
+@media (max-width: 768px) {
+	.imagen-esports {
+		grid-area: imagen-esports;
+		width: 250px;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-self: center;
+	}
+	.nosotros {
+		display: grid;
+		height: 250px;
+		grid-template-columns: repeat(1,1fr);
+		grid-template-rows: repeat(2,1fr);
+		grid-template-areas: "titulo-somos" "parrafo-1";
+	}
+	.titulo-somos {
+		grid-area: titulo-somos;
+		width: 300px;
+		display: flex;
+		justify-content: center;
+	}
+	.parrafo-1 {
+		grid-area: parrafo-1;
+		display: flex;
+		width: 300px;
+		padding-bottom: 20px;
+	}
+}
