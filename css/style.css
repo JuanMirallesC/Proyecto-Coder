@@ -126,7 +126,18 @@
         bottom: -10px;
         transition: 0.3s; }
       .box-2 a:hover::after {
-        width: 100%; } }
+        width: 100%; }
+  .noticias-index {
+    display: grid;
+    width: 100%;
+    height: auto;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas: "box-3" "box-4" "box-4" "box-4"; }
+  .box-4 {
+    grid-area: box-4; }
+    .box-4 .box-3 {
+      grid-area: box-3; } }
 
 @media (max-width: 576px) {
   .nav-bar {
@@ -253,7 +264,8 @@ img:hover {
   .img-lol {
     grid-area: img-lol;
     padding-bottom: 100px;
-    justify-self: center; }
+    justify-self: center;
+    padding-top: 20px; }
   .img-cs {
     grid-area: img-cs;
     padding-bottom: 25px;
@@ -307,6 +319,9 @@ img:hover {
 
 .box-css {
   grid-area: box-css; }
+
+.box-valo {
+  grid-area: box-valo; }
 
 @media (max-width: 576px) {
   .box-noticias {

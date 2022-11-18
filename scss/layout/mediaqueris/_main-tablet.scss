@@ -45,4 +45,28 @@
 			}
 		}
 	}
+
+	.noticias-index{
+		display: grid;
+		width: 100%;
+		height: auto;
+		grid-template-columns: repeat(1,1fr);
+		grid-template-rows: repeat(4, 1fr);
+		grid-template-areas: 
+		"box-3"
+		"box-4"
+		"box-4"
+		"box-4"
+		
+		;
+	}
+
+	.box-4{
+		grid-area: box-4;
+		
+	.box-3{
+		grid-area: box-3;
+
+	}
+}
 }

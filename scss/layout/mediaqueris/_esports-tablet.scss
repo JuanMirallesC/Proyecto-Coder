@@ -10,11 +10,14 @@
 		grid-area: img-lol;
 		padding-bottom: 100px;
 		justify-self: center;
+		padding-top: 20px;
+		
 	}
 	.img-cs {
 		grid-area: img-cs;
 		padding-bottom: 25px;
 		justify-self: center;
+		
 		img {
 			width: 300px;
 		}
